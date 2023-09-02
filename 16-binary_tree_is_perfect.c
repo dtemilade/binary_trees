@@ -15,7 +15,7 @@ return (0);
 
 /*process to return result*/
 if ((binary_tree_balance(tree) != 1) && (binary_tree_is_full(tree) != 0))
-return (1);
+	return (1);
 return (0);
 }
 
@@ -93,6 +93,7 @@ return (0);
 if (!tree->right && !tree->left)
 return (1);
 if (tree->right && tree->left)
-return (binary_tree_is_full(tree->left) && binary_tree_is_full(tree->right));
+	return (binary_tree_is_full(tree->left) &&
+			binary_tree_is_full(tree->right));
 return (0);
 }

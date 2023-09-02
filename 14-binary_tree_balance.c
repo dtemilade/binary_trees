@@ -24,6 +24,7 @@ left_height = binary_tree_height(tree->left);
 right_height = binary_tree_height(tree->right);
 return (left_height - right_height);
 }
+
 /**
  * binary_tree_height - prototype function to gets the height of a binary tree
  * @tree: variable for root node to draw height from for tree
