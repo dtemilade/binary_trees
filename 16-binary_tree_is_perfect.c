@@ -14,7 +14,7 @@ if (!tree)
 return (0);
 
 /*process to return result*/
-if ((binary_tree_balance(tree) != 1) && (binary_tree_is_full(tree) != 0))
+if ((binary_tree_balance(tree) == 0) && (binary_tree_is_full(tree) == 1))
 	return (1);
 return (0);
 }
@@ -66,15 +66,13 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		return (0);
 
 	/*process to gets the height of a binary tree*/
-	if (tree->left)
-		left_size = left_size + 1 + binary_tree_height(tree->left);
-	if (tree->right)
-		right_size = right_size + 1 + binary_tree_height(tree->right);
+	left_size = binary_tree_height(tree->left);
+	right_size = binary_tree_height(tree->right);
 
-	if (left_size < right_size)
-		return (right_size);
+	if (left_size > right_size)
+		return (left_size + 1);
 	else
-		return (left_size);
+		return (right_size + 1);
 }
 
 /**
@@ -85,15 +83,15 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-/*Condition to return 0 or NULL*/
-if (!tree)
-return (0);
+	/*Condition to return 0 or NULL*/
+	if (!tree)
+		return (0);
 
-/*process to return result*/
-if (!tree->right && !tree->left)
-return (1);
-if (tree->right && tree->left)
-	return (binary_tree_is_full(tree->left) &&
+	/*process to return result*/
+	if (!tree->right && !tree->left)
+		return (1);
+	if (tree->right && tree->left)
+		return (binary_tree_is_full(tree->left) &&
 			binary_tree_is_full(tree->right));
-return (0);
+	return (0);
 }
