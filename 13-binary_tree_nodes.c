@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_nodes - prototype function that counts the nodes in a binary tree
+ * binary_tree_nodes - prototype function to counts the nodes in a binary tree
  * @tree: pointer node binary tree
  * Return: Number of nodes in a binary tree
  */
@@ -18,10 +18,10 @@ count = 0;
 if (!tree)
 return (0);
 
-/*process to return the nodes count*/
-if (tree->right || tree->left)
-count = count + 1;
-count = count + binary_tree_nodes(tree->left);
-count = count + binary_tree_nodes(tree->right);
-return (count);
+	/*process to return the nodes count*/
+	if (tree->right || tree->left)
+		count = count + 1;
+	count = count + binary_tree_nodes(tree->left);
+	count = count + binary_tree_nodes(tree->right);
+	return (count);
 }

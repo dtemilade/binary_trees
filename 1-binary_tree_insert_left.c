@@ -11,13 +11,12 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	/*Introducing variable for new node*/
 	binary_tree_t *retval;
 
-	/*Assume memory allocation for the new node*/
-	retval = malloc(sizeof(binary_tree_t));
-
 	/*Condition to return NULL*/
 	if (value == '\0' || parent == NULL)
 		return (NULL);
 
+	/*Assume memory allocation for the new node*/
+	retval = malloc(sizeof(binary_tree_t));
 	if (retval == NULL)
 		return (NULL);
 
